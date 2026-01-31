@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiritoasty.online — Documentary</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Josefin Sans', sans-serif;
+    }
+
+    body {
+      background: #121212;
+      color: #f5f5f5;
+      overflow-x: hidden;
+    }
+
+    :root {
+      --accent: #a8bca1;
+      --card: #1a1a1a;
+      --border: #2a2a2a;
+    }
+
+    .enter-overlay {
+      position: fixed;
+      inset: 0;
+      background: #121212;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      transition: opacity 0.6s cubic-bezier(0.6,0,0.2,1);
+    }
+
+    .enter-overlay.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .enter-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .enter-title {
+      font-size: 2.2rem;
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      color: white;
+    }
+
+    .password-box {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .password-box input {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.9rem 1.2rem;
+      color: white;
+      font-size: 1rem;
+      outline: none;
+      width: 220px;
+    }
+
+    .password-box button {
+      background: var(--accent);
+      color: #121212;
+      border: none;
+      border-radius: 10px;
+      padding: 0.9rem 1.6rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.25s, background 0.25s;
+    }
+
+    .password-box button:hover {
+      transform: translateY(-2px);
+      background: #7d8c74;
+    }
+
+    .error {
+      font-size: 0.9rem;
+      color: #ff8a8a;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .animate {
+      opacity: 0;
+      transform: translateY(40px);
+      transition:
+        opacity 0.6s cubic-bezier(0.6,0,0.2,1),
+        transform 0.6s cubic-bezier(0.6,0,0.2,1);
+    }
+
+    body.entered .animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    header {
+      width: 90%;
+      max-width: 1100px;
+      margin: 2.5rem auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .wrapper {
+      width: 90%;
+      max-width: 1100px;
+      margin: 4rem auto 6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .section {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 2.6rem;
+      border: 1px solid var(--border);
+    }
+
+    .section h2 {
+      font-size: 1.9rem;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      opacity: 0.6;
+      margin-bottom: 1.6rem;
+    }
+
+    .section p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #ccc;
+      margin-bottom: 1.2em;
+    }
+
+    .section p:last-child {
+      margin-bottom: 0;
+    }
+
+.section img {
+  width: 100%;
+  max-width: 420px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+    @media (max-width: 700px) {
+      .section {
+        padding: 2rem 1.6rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="enter-overlay" id="overlay">
+    <div class="enter-content">
+      <div class="enter-title">Gab Engine Documentary!</div>
+      <div class="password-box">
+        <input type="password" id="password" placeholder="Enter password">
+        <button id="enterBtn">Enter</button>
+      </div>
+      <div class="error" id="error">Incorrect password</div>
+    </div>
+  </div>
+
+  <header class="animate">
+    <h1>Documentary</h1>
+  </header>
+
+  <main class="wrapper">
+
+    <section class="section animate">
+      <h2>1: Duplicating the character sprite</h2>
+      <div class="subtitle">self explanatory</div>
+      <p>Obviously just go into the character sprite and duplicate a sprite that doesn't have any sort of animation on it brah</p>
+       </section>
+
+    <section class="section animate">
+      <h2>2: The process</h2>
+      <div class="subtitle">the part that makes the character alive in general</div>
+      <p>First of all you're going to go into the NEW duplicated character sprite and then change this part right here (the character properties block)</p>
+      <img src="https://files.catbox.moe/fgurej.jpg" alt="Online image">
+      <p>Animations exist to guide, not distract.</p>
+    </section>
+
+    <section class="section animate">
+      <h2>Chapter III — Continuation</h2>
+      <div class="subtitle">Where it goes next</div>
+      <p>Add chapters freely. Expand the narrative.</p>
+    </section>
+
+  </main>
+
+  <script>
+    const hash = "5928448df974c28c3b6c0d6aa3e6269db06607cada390c624c689dd80ab45f99";
+    const btn = document.getElementById("enterBtn");
+    const input = document.getElementById("password");
+    const overlay = document.getElementById("overlay");
+    const error = document.getElementById("error");
+
+    async function sha256(text) {
+      const data = new TextEncoder().encode(text);
+      const digest = await crypto.subtle.digest("SHA-256", data);
+      return Array.from(new Uint8Array(digest))
+        .map(b => b.toString(16).padStart(2, "0"))
+        .join("");
+    }
+
+    btn.addEventListener("click", async () => {
+      const hashed = await sha256(input.value);
+      if (hashed === hash) {
+        document.body.classList.add("entered");
+        overlay.classList.add("hidden");
+      } else {
+        error.style.opacity = "1";
+        input.value = "";
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+
